@@ -1,0 +1,19 @@
+﻿syntax = "proto3";
+
+package calc;
+
+service GrpcCalculator {
+	rpc Addition (ArithmeticCommandRequest) returns (CalculationResult);
+	rpc Subtraction (ArithmeticCommandRequest) returns (CalculationResult);
+	rpc Multiplication (ArithmeticCommandRequest) returns (CalculationResult);
+	rpc Division (ArithmeticCommandRequest) returns (CalculationResult);
+}
+
+message ArithmeticCommandRequest {
+	double operand1 = 1;
+	double operand2 = 2;
+}
+
+message CalculationResult {
+	double result = 1;
+}
